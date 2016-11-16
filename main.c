@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkgrid.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 14:49:42 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/16 15:08:00 by nsabbah          ###   ########.fr       */
+/*   Created: 2016/11/16 15:06:50 by nsabbah           #+#    #+#             */
+/*   Updated: 2016/11/16 15:10:15 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_checkgrid(char str)
-{
-  int i;
+#include <stdio.h>
 
-  if (strlen(str) != 20)
-    return (0);
-  i = 0
-  while (str[i])
-  {
-    if ((i - (i - 1) / 4) % 4 == 0 && str[i] != '\n')
-      return (0);
-    if ((i - (i - 1) / 4) % 4 != 0 && (str[i] != '.' || str[i] != '#'))
-      return (0);
-    i++;
-  }
-  return (1);
+int ft_checkgrid(char str);
+
+int main(int argc, char **argv)
+{
+  printf("Validite de la grille : %i\n", ft_checkgrid(argv[1]));
+  return (0);
 }

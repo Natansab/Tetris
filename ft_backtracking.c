@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 20:44:55 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/16 22:57:25 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/16 23:16:54 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,17 @@ char	*ft_blocksToXY()
 
 char	**ft_allblockXY()
 {
-	ft_blocksToXY()
+	char	**blocks;
+	char	*raw;
+	raw = ft_filereadertostring(file)
+	while()
+	{	
+	while (raw[i] != '\0')
+	{
+		blocks[w][k] = raw[i]
+	}
+	w++;
+	}
 }
 void	ft_backtracking(positions, smallestsquare)
 {

@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 14:49:42 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/16 16:54:20 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/16 17:05:59 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,3 @@ int ft_checktetri(char *str)
     return (0);
   return (1);
 }
-
-/*
-Example of valid grids
-....\n....\n....\n....\n
-..#.\n..#.\n..#.\n..#.\n
-
-Invalid grids
-....\n....\n....\n...\n.
-....\n....\n....\n.....\n
-*/

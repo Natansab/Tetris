@@ -6,27 +6,43 @@
 #    By: ewallner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 16:30:18 by ewallner          #+#    #+#              #
-#    Updated: 2016/11/17 18:23:27 by ewallner         ###   ########.fr        #
+#    Updated: 2016/11/17 19:56:03 by ewallner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fillit
-HEAD = src/srcheader.h
-FLAGS =  -Werror -Wextra -Wall
-SRC = ft_putchar.c ft_putchar_fd.c ft_putstr_fd.c ft_putstr.c ft_strlen.c \
+NAME = fillit 
+LIBFT = libft.a
+GCC_FLAGS = -Wall -Werror -Wextra
+CC = gcc $(GCC_FLAGS)
+RM = rm -rf
 
-OBJ = $(SRC:%.c=%.o)
+SRCS = ft_unittest.c \
+	   ft_errormsg.c \
+	   ft_filetostr.c \
 
-$(NAME):
-	CC -o $(NAME) $(FLAGS) $(SRC) -I $(HEAD) -L $(LIB) -lft
+SRCDIR = ./src/
+OBJDIR = ./obj/
+OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-clean: 
-	/bin/rm -f $(OBJ)
+$(NAME): $(LIBFT) $(OBJS)
+	@$(CC) -Llibft $(OBJS) -lft -o $(NAME)
+
+$(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
+	@mkdir -p $(OBJDIR)
+	@$(CC) -o $@ -c $^
+
+$(LIBFT):
+	@make -C ./libft/
+
+clean:
+	@$(RM) $(OBJS)
+	@make clean -C ./libft/
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@$(RM) $(LIBFT)
+	@$(RM) $(NAME)
+	@make fclean -C ./libft/
 
 re: fclean all
-

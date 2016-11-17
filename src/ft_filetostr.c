@@ -6,11 +6,11 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:08:09 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/17 17:47:30 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/17 19:53:50 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "srcheader.h"
+#include "header.h"
 #include "library/libft.h"
 #define BUF_SIZE 441
 

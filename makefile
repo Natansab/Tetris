@@ -6,43 +6,48 @@
 #    By: ewallner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 16:30:18 by ewallner          #+#    #+#              #
-#    Updated: 2016/11/17 19:56:03 by ewallner         ###   ########.fr        #
+#    Updated: 2016/11/17 20:06:51 by ewallner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fillit 
-LIBFT = libft.a
-GCC_FLAGS = -Wall -Werror -Wextra
-CC = gcc $(GCC_FLAGS)
-RM = rm -rf
+NAME= fillit 
 
-SRCS = ft_unittest.c \
-	   ft_errormsg.c \
-	   ft_filetostr.c \
+SRC= ft_filetostr.c \
+	 ft_errormsg.c \
 
-SRCDIR = ./src/
-OBJDIR = ./obj/
-OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-all: $(NAME)
+CC= gcc
+CFLAGS= -Wall -Wextra -Werror
 
-$(NAME): $(LIBFT) $(OBJS)
-	@$(CC) -Llibft $(OBJS) -lft -o $(NAME)
+LIBFT= ./libft/libft.a
+LIBINC= -I./libft
+LIBLINK= -L./libft -lft
 
-$(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
-	@mkdir -p $(OBJDIR)
-	@$(CC) -o $@ -c $^
+SRCDIR= ./src/
+INCDIR= ./includes/
+OBJDIR= ./obj/
+
+all: obj libft $(NAME)
+
+obj:
+	mkdir -p $(OBJDIR)
+
+$(OBJDIR)%.o:$(SRCDIR)%.c
+	$(CC) $(CFLAGS) $(LIBINC) -I $(INCDIR) -o $@ -c $<
+
+libft: $(LIBFT)
 
 $(LIBFT):
-	@make -C ./libft/
+	make -C ./libft
+
+$(NAME): $(OBJ)
+	$(CC) $(LIBLINK) -o $(NAME) $(OBJ)
 
 clean:
-	@$(RM) $(OBJS)
-	@make clean -C ./libft/
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	@$(RM) $(LIBFT)
-	@$(RM) $(NAME)
-	@make fclean -C ./libft/
+	rm -rf $(NAME)
 
 re: fclean all

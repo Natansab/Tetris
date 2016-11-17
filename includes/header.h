@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 20:13:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/17 17:35:39 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/17 20:26:56 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 #include <unistd.h>
 
 void	ft_errormsg(int msg);
+char	*ft_filetostr(char *file);
 
 #endif

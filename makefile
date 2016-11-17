@@ -6,7 +6,7 @@
 #    By: ewallner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 16:30:18 by ewallner          #+#    #+#              #
-#    Updated: 2016/11/17 20:10:44 by ewallner         ###   ########.fr        #
+#    Updated: 2016/11/17 21:16:49 by ewallner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME= fillit
 
 SRC= ft_filetostr.c \
 	 ft_errormsg.c \
-	 ft_unittest.c
+	 ft_checkgrid.c \
+	 ft_unittest.c \
+	 ft_checktetri.c \
 
 OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

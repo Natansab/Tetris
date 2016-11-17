@@ -6,12 +6,12 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:08:09 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/17 19:53:50 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/17 20:09:07 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-#include "library/libft.h"
+#include "../includes/header.h"
+#include "../libft/libft.h"
 #define BUF_SIZE 441
 
 /* BUF_SIZE is equal to 26 blocks without the last new line. 26 * (16 + \n) - 1

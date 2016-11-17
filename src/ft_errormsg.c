@@ -6,11 +6,11 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:07:15 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/17 17:16:37 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/17 20:09:56 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "library/libft.h"
+#include "../libft/libft.h"
 
 void	ft_errormsg(int msg)
 {

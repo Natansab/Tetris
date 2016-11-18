@@ -19,6 +19,7 @@ SRC= ft_filetostr.c \
 	 ft_unittest.c \
 	 ft_checktetro.c \
 	 ft_checkfile.c \
+	 ft_makegrid.c \
 
 OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

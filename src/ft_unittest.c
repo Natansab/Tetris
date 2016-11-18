@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 14:41:40 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/18 15:56:49 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/18 17:35:58 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int			main(int argc, char **argv)
 //	printf("Check the Tetri: %d \n", ft_checktetri(ft_filetostr(argv[1])))
 	printf("\nCheck the File: %i \n", ft_checkfile(ft_filetostr(argv[1])));
 	puts(ft_filetostr(argv[1]));
+	printf("Make grid of %i is :\n%s \n", 6, (ft_makegrid(6)));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 14:49:42 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/16 17:05:54 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/18 10:22:10 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int ft_checkgrid(char *str)
 {
   int i;
 
-  if (strlen(str) != 20)
-    return (0);
   i = 0;
-  while (str[i])
+  while (str[i] && i < 20)
   {
     if ((i + 1) % 5 == 0 && str[i] != '\n' && i != 0)
       return (0);

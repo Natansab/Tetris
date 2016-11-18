@@ -6,11 +6,11 @@
 #    By: ewallner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 16:30:18 by ewallner          #+#    #+#              #
-#    Updated: 2016/11/18 14:00:44 by ewallner         ###   ########.fr        #
+#    Updated: 2016/11/18 15:39:28 by ewallner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= fillit 
+NAME= fillit
 
 SRC= ft_filetostr.c \
 	 ft_errormsg.c \
@@ -18,6 +18,9 @@ SRC= ft_filetostr.c \
 	 ft_unittest_emil.c \
 	 ft_checktetri.c \
 	 ft_minsquare.c \
+	 ft_unittest.c \
+	 ft_checktetro.c \
+	 ft_checkfile.c \
 
 OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

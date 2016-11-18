@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME= fillit 
+NAME= fillit
 
 SRC= ft_filetostr.c \
 	 ft_errormsg.c \
 	 ft_checkgrid.c \
 	 ft_unittest.c \
 	 ft_checktetri.c \
+	 ft_checkfile.c \
 
 OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

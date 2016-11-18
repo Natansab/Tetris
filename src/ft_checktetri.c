@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 14:49:42 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/16 17:05:59 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/18 10:42:55 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int ft_checktetri(char *str)
   count = 1;
   j = 0;
   i = 0;
-  while (str[j] != '#')
+  while (str[j] != '#' && j < 20)
     j++;
   i = j + 1;
-  while (str[i])
+  while (i < 20)
   {
     if (str[i] == '#')
     {

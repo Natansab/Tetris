@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 20:13:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/17 21:15:51 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/18 15:22:05 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void	ft_errormsg(int msg);
 char	*ft_filetostr(char *file);
 int		ft_checktetri(char *str);
 int		ft_checkgrid(char *str);
+int		ft_minsquare(char *str);
+int		ft_countblocks(char *str);
 
 #endif

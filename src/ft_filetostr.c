@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:08:09 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/17 20:09:07 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/18 11:00:23 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char		*ft_filetostr(char *file)
 			return (NULL);
 		}
 	}
+//	output[ret] = '\0';
 	close(fd);
 	free(buffer);
 	return (output);

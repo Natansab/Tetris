@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 20:13:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/18 10:36:20 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/18 14:37:06 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct	s_data
 
 void	ft_errormsg(int msg);
 char	*ft_filetostr(char *file);
-int		ft_checktetri(char *str);
+int		ft_checktetro(char *str);
 int		ft_checkgrid(char *str);
 int ft_checkfile(char *str);
 

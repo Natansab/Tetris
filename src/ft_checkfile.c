@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:33:39 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/18 11:05:27 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/18 14:37:48 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int ft_checkfile(char *str)
   i = 0;
   printf("ft_strlen(str) is %i\n", ft_strlen(str));
   ft_putstr("hello\n");
-  while (ft_checkgrid(&str[i]) && ft_checktetri(&str[i]))
+  while (ft_checkgrid(&str[i]) && ft_checktetro(&str[i]))
   {
     if (i + 20 == ft_strlen(str))
       return (1);

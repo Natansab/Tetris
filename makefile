@@ -6,7 +6,7 @@
 #    By: ewallner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 16:30:18 by ewallner          #+#    #+#              #
-#    Updated: 2016/11/18 15:39:28 by ewallner         ###   ########.fr        #
+#    Updated: 2016/11/19 16:24:30 by ewallner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,11 @@ SRC= ft_filetostr.c \
 	 ft_errormsg.c \
 	 ft_checkgrid.c \
 	 ft_minsquare.c \
-	 ft_unittest.c \
 	 ft_checktetro.c \
 	 ft_checkfile.c \
 	 ft_makegrid.c \
+	 ft_unittest_emil.c \
+	 ft_algotetro.c \
 
 OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

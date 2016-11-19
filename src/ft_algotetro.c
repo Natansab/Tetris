@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/19 16:05:22 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/19 16:27:37 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "../libft/libft.h"
 
 /* This function will print the AAAA or BBBB if we need to fit the tetro in
    the grid. If we need to erase the AAAA, erase = 1*/
@@ -22,6 +23,7 @@ char	*ft_printtetro(int **tetro, char *grid, int position, int i, int erase)
 {
 	int k;
 
+	write(1, "e\n", 2);
 	k = 0;
 	while (k < 4)
 	{
@@ -30,7 +32,7 @@ char	*ft_printtetro(int **tetro, char *grid, int position, int i, int erase)
 			grid[tetro[i][k] + position] = '.';
 		else
 			grid[tetro[i][k] + position] = 'A' + i;
-		i++;
+		k++;
 	}
 	return (grid);
 }
@@ -44,14 +46,21 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 {
 	int k;
 
+	ft_putstr("HELLO");
+	write(1, "d\n", 2);
 	k = 0;
 	while (k < 4)
 	{
-		printf("ok2");
 		if (grid[tetro[i][k] + position] != '.')
+		{
+			ft_putnbr(i);
+			ft_putnbr(k);
+			ft_putnbr(position);
 			return (0);
+		}
 		k++;
 	}
+	write(1, "d\n", 2);
 	return (1);
 }
 
@@ -60,12 +69,13 @@ int ft_algotetro(int **tetro, int i, char *grid)
 	unsigned long  position;
 	int print;
 
-	printf("ok");
+	write(1, "c", 1);
 	if (i > 2)
 		return (1);
 	position = 0;
 	while (position < strlen(grid))
 	{
+		write(1, "b\n", 2);
 		print = 0;
 		if (ft_tetrofits(tetro, grid, position, i))
 		{
@@ -84,6 +94,7 @@ int ft_algotetro(int **tetro, int i, char *grid)
 	return (0);
 }
 
+/*
 int			main(void)
 {
 	int tetro[2][4] = {
@@ -96,4 +107,4 @@ int			main(void)
 //	(void)grid;
 	ft_algotetro((int **)tetro, 0, grid);
 	return (0);
-}
+}*/

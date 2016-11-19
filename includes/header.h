@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 20:13:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/18 17:35:27 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/19 16:22:41 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ int		ft_minsquare(char *str);
 int		ft_countblocks(char *str);
 int ft_checkfile(char *str);
 char *ft_makegrid(int);
+int		ft_algotetro(int **tetro, int i, char *grid);
+
+
 #endif

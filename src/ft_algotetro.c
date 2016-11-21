@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/21 18:21:24 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/21 19:33:22 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "../includes/header.h"
 #include "../libft/libft.h"
 
 /* This function will print the AAAA or BBBB if we need to fit the tetro in
@@ -49,10 +50,15 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 //	ft_putchar('\n');
 	while (k < 4)
 	{
+		printf(" value in the grid %c\n", grid[tetro[i][k] + position]);
+		printf(" i = %i, k = %i, position = %i\n", i, k, position);
 		if (grid[tetro[i][k] + position] != '.')
 			return (0);
 		k++;
 	}
+	printf("does it fit ?\n");
+	printf("position is %i\n", position);
+
 	return (1);
 }
 
@@ -62,7 +68,9 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 	int print;
 	int grid_size;
 
-	grid_size = (ft_strlen(grid) + 1) / 21;
+	grid_size = 0;
+	while (grid[grid_size] == '.')
+		grid_size++;
 	if (i > nb_of_tetros - 1)
 		return (1);
 	position = 0;
@@ -85,6 +93,10 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 		position++;
 	}
 	if (i == 0)
-	  return (ft_algotetro(ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1), 0, makegrid(grid_size + 1), nb_of_tetros);
+	//	return (printf("Cats are cool!"));
+	{
+		tetro = ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1);
+		return (ft_algotetro(tetro, 0, ft_makegrid(grid_size + 1), nb_of_tetros));
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:51:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/21 16:59:01 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/21 19:22:25 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			main(int argc, char **argv)
 	(void)argv;
 //	int **tetro;
 //	int **tetronew;
-	char str[300] = ".#..\n###.\n..##\n....\n\n#...\n#...\n#...\n#...\n\n##..\n#...\n#...\n....\n";	
+//	char str[300] = ".#..\n###.\n..##\n....\n\n#...\n#...\n#...\n#...\n\n##..\n#...\n#...\n....\n\n####\n....\n....\n....\n";	
 	
 //	tetro = (int **)malloc(4 * sizeof(*tetro));
 //	tetro[0] = (int *)malloc(4 * sizeof(tetro));
@@ -46,12 +46,12 @@ int			main(int argc, char **argv)
 	tetro[2][2] = 10;
 	tetro[2][3] = 15;
 */	
-	char grid[30] = "....\n....\n....\n....\n";
+	//char grid[30] = "....\n....\n....\n....\n";
 	
 //	tetronew = ft_tetrotogrid(tetro, grid);
 
 //	printf("This is tha shit: %d", tetro[2][3]);
-	ft_algotetro(ft_tetrotoarray(str), 0, grid, (strlen(str) + 1)/ 21);
+	ft_algotetro(ft_tetrotoarray(ft_filetostr(argv[1])), 0, ft_makegrid(4), (strlen(ft_filetostr(argv[1])) + 1)/ 21);
 	//(void)argc;
 //	printf("Check the Grid: %d \n", ft_checkgrid(ft_filetostr(argv[1])));
 //	printf("Check the Tetri: %d \n", ft_checktetri(ft_filetostr(argv[1])));

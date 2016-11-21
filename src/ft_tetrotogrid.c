@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:08:53 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/21 17:39:18 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/21 19:13:55 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		**ft_tetrotogrid(int **t, int nb_of_tetros, int width)
 {
 	int		i;
 	int		id;
-
+	
 	id = 0;
 	i = 0;
 	while (id < nb_of_tetros)
@@ -42,6 +42,7 @@ int		**ft_tetrotogrid(int **t, int nb_of_tetros, int width)
 			}
 		id++;
 	}
+	printf("width is equal to %i\n", width);
 	return (t);
 }
 

@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/19 17:32:30 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/21 18:21:24 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,14 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 	return (1);
 }
 
-int ft_algotetro(int **tetro, int i, char *grid)
+int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 {
 	unsigned long  position;
 	int print;
+	int grid_size;
 
-	if (i > 2)
+	grid_size = (ft_strlen(grid) + 1) / 21;
+	if (i > nb_of_tetros - 1)
 		return (1);
 	position = 0;
 	while (position < strlen(grid))
@@ -75,15 +77,14 @@ int ft_algotetro(int **tetro, int i, char *grid)
 			ft_putstr("\n\n");
 			ft_putstr(grid);
 			ft_putstr("\n\n");
-			//ft_putnbr(i + 1);
-			if (ft_algotetro(tetro, i + 1, grid))
+			if (ft_algotetro(tetro, i + 1, grid, nb_of_tetros))
 				return (1);
 		}
 		if (print)
 			grid = ft_printtetro(tetro, grid, position, i, 1);
 		position++;
 	}
-	/*if (i = 0)
-	  return (ft_algotetro(tetro[0] grid++)); */
+	if (i == 0)
+	  return (ft_algotetro(ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1), 0, makegrid(grid_size + 1), nb_of_tetros);
 	return (0);
 }

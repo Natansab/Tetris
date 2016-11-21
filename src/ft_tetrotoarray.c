@@ -6,11 +6,13 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 10:39:21 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/21 11:32:08 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/21 16:48:00 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h>
+#include "../libft/libft.h"
 
 int *ft_tetrotocoord(int *tetro, char *str)
 {
@@ -93,12 +95,12 @@ return (str);
 
 int **ft_tetrotoarray(char *str)
 {
-	int nb_of_tetro;
+	int nb_of_tetros;
 	int **tetro;
 	int i;
 
 // Define the nb of tetros
-	nb_of_tetros = (ft_strlen(str) + 1) / 21;
+	nb_of_tetros = (strlen(str) + 1) / 21;
 
 // Allocate the number of tetros with malloc
 	if (!(tetro = (int**)malloc(sizeof(*tetro) * nb_of_tetros)))
@@ -110,7 +112,8 @@ int **ft_tetrotoarray(char *str)
 		if (!(tetro[i] = (int*)malloc(sizeof(tetro) * 4)))
 			return (NULL);
 		// Do not forget to change strndup to ft_strndup, check if needs to free the memory of ft_strndup
-		tetro[i] = ft_tetrotocoord(tetro[i], ft_cutrow(ft_cutline(strndup(str + i * 21, 20)))));
+		tetro[i] = ft_tetrotocoord(tetro[i], ft_cutcol(ft_cutrow(strndup(str + i * 21, 20))));
+		i++;
 	}
 	return (tetro);
 }

@@ -83,16 +83,16 @@ int main(void)
 {
 	int i = 0;
 	int *tetro;
-	char str[300] = "....\n....\n..##\n..##\n\n....\n....\n..##\n..##\n\n....\n....\n....\n####\n\n....\n....\n..##\n..##\n";
+	char str[300] = "....\n....\n..##\n..##\n\n....\n....\n..##\n..##\n\n....\n....\n..##\n..##\n\n....\n....\n..##\n..##\n";
 
 	tetro = (int*)malloc(sizeof(int) * 4);
-	printf("strlen de str vaut : %lu\n", strlen(str));
+	//printf("strlen de str vaut : %lu\n", strlen(str));
 	//puts(ft_cutcol(str));
 	puts(str);
 	puts("\n\n");
 	tetro = ft_tetrotocoord(tetro, ft_cutcol(ft_cutrow(strndup(str + 42, 20))));
 	printf("tetro vaut : {");
-	while (i < 4)
+	while (i < 16)
 	{
 	printf("%i, ", tetro[i]);
 	i++;

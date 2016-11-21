@@ -6,34 +6,41 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:08:53 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/21 11:09:10 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/21 17:39:18 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		**ft_tetrotogrid(int **t, char *grid)
+#include <stdio.h>
+
+int		**ft_tetrotogrid(int **t, int nb_of_tetros, int width)
 {
 	int		i;
 	int		id;
-	int		width;
 
-	id = -1;
-	width = 0;
-	i = -1;
-	while (grid[++i] == '.')
-		width++;
+	id = 0;
 	i = 0;
-	while (t[++id] != '\0')
+	while (id < nb_of_tetros)
 	{
-		i = -1;
+		i = 0;
 		if (width == 2) 
-			while (++i < 4)
-				t[id][i] = t[id][i] - (t[id][i] / 5 * 2);
+			while (i < 4)
+			{
+				t[id][i] = t[id][i] - ((t[id][i] / 5) * 2);
+				i++;
+			}
 		else if (width == 3)
-			while (++i < 4)
-				t[id][i] = t[id][i] - (t[id][i] / 5 * 1);
+			while (i < 4)
+			{
+				t[id][i] = t[id][i] - ((t[id][i] / 5) * 1);
+				i++;
+			}
 		else if (width > 4) 
-			while (++i < 4)
-				t[id][i] = t[id][i] + (t[id][i] / 5 * (width - 4 + 1));
+			while (i < 4)
+			{
+				t[id][i] = t[id][i] + (t[id][i] / 5 * (width - 4));
+				i++;
+			}
+		id++;
 	}
 	return (t);
 }
@@ -45,10 +52,5 @@ int		**ft_tetrotogrid(int **t, char *grid)
  * Same for the grid with 3 in width.
  * If the square is larger than 4 we add the grid - 4(tetro width) times the row
  * the first row is times 0. */
-
-
-
-
-
 
 

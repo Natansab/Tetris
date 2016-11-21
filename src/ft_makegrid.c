@@ -6,11 +6,11 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:58:16 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/21 18:37:53 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/21 21:42:52 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <header.h>
+#include <stdlib.h>
 
 /*Function to create the string with the format ....\n....\n....\n....\n
 The function has in argument that size of the square. For the example above

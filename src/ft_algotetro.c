@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/21 19:33:22 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/21 21:53:26 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 //	ft_putchar('\n');
 	while (k < 4)
 	{
-		printf(" value in the grid %c\n", grid[tetro[i][k] + position]);
-		printf(" i = %i, k = %i, position = %i\n", i, k, position);
+		//printf(" value in the grid %c\n", grid[tetro[i][k] + position]);
+		//printf(" i = %i, k = %i, position = %i\n", i, k, position);
 		if (grid[tetro[i][k] + position] != '.')
 			return (0);
 		k++;
 	}
-	printf("does it fit ?\n");
-	printf("position is %i\n", position);
+	//printf("does it fit ?\n");
+	//printf("position is %i\n", position);
 
 	return (1);
 }
@@ -67,6 +67,8 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 	unsigned long  position;
 	int print;
 	int grid_size;
+
+	printf("the number of tetros: %d \n", nb_of_tetros);
 
 	grid_size = 0;
 	while (grid[grid_size] == '.')
@@ -91,10 +93,11 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 		if (print)
 			grid = ft_printtetro(tetro, grid, position, i, 1);
 		position++;
+		printf("This is i: %d, and position: %d \n", i, (int)position);
 	}
 	if (i == 0)
-	//	return (printf("Cats are cool!"));
 	{
+		printf("Cats are cool!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		tetro = ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1);
 		return (ft_algotetro(tetro, 0, ft_makegrid(grid_size + 1), nb_of_tetros));
 	}

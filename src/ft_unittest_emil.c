@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:51:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 15:53:52 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/22 16:35:51 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int	main(int argc, char **argv)
 	nb_of_tetros = (strlen(str) + 1) / 21;
 	square = ft_minsquare(nb_of_tetros);
 	tetro = ft_tetrotoarray(str);
+	if (nb_of_tetros == 1 &&
+			(tetro[0][0] != 0 || tetro[0][1] != 1
+			 || tetro[0][2] != 5 || tetro[0][3] != 6))
+		square++;
 	while (i < nb_of_tetros)
 	{
 		if ((tetro[i][3] == 3 || tetro[i][3] == 15) && square == 3)

@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/21 21:53:26 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 08:18:10 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 	int print;
 	int grid_size;
 
-	printf("the number of tetros: %d \n", nb_of_tetros);
+//	printf("the number of tetros: %d \n", nb_of_tetros);
 
 	grid_size = 0;
 	while (grid[grid_size] == '.')
@@ -84,20 +84,20 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 			//ft_putstr("ok\n\n");
 			print = 1;
 			grid = ft_printtetro(tetro, grid, position, i, 0);
-			ft_putstr("\n\n");
-			ft_putstr(grid);
-			ft_putstr("\n\n");
+			puts("\n\n");
+			puts(grid);
+			puts("\n\n");
 			if (ft_algotetro(tetro, i + 1, grid, nb_of_tetros))
 				return (1);
 		}
 		if (print)
 			grid = ft_printtetro(tetro, grid, position, i, 1);
 		position++;
-		printf("This is i: %d, and position: %d \n", i, (int)position);
+		//printf("This is i: %d, and position: %d \n", i, (int)position);
 	}
 	if (i == 0)
 	{
-		printf("Cats are cool!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		//printf("Cats are cool!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		tetro = ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1);
 		return (ft_algotetro(tetro, 0, ft_makegrid(grid_size + 1), nb_of_tetros));
 	}

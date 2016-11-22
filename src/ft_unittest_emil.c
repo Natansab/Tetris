@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:51:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/21 22:31:51 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 08:35:30 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 int			main(int argc, char **argv)
 {
 	(void)argc;
-	ft_algotetro(ft_tetrotoarray(ft_filetostr(argv[1])), 0, ft_makegrid(2), (strlen(ft_filetostr(argv[1])) + 1)/ 21);
+	char	*str;
+	int		nb_of_tetros;
+	int		square;
+
+	str = ft_filetostr(argv[1]);
+	square = ft_minsquare(str);
+	nb_of_tetros = (strlen(str) + 1) / 21;
+	ft_algotetro(ft_tetroinit(ft_tetrotoarray(str), nb_of_tetros, square), 0, ft_makegrid(ft_minsquare(str)), (nb_of_tetros));
 	return (0);
 }

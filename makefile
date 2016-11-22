@@ -6,7 +6,7 @@
 #    By: ewallner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 16:30:18 by ewallner          #+#    #+#              #
-#    Updated: 2016/11/21 19:58:36 by ewallner         ###   ########.fr        #
+#    Updated: 2016/11/22 08:35:08 by ewallner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC= ft_filetostr.c \
 	 ft_algotetro.c \
 	ft_tetrotoarray.c \
 	ft_tetrotogrid.c \
+	ft_tetroinit.c \
 
 OBJ= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

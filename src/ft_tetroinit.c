@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tetrotogrid.c                                   :+:      :+:    :+:   */
+/*   ft_tetroinit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 10:08:53 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 08:10:33 by ewallner         ###   ########.fr       */
+/*   Created: 2016/11/22 08:29:22 by ewallner          #+#    #+#             */
+/*   Updated: 2016/11/22 08:35:33 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		**ft_tetrotogrid(int **t, int nb_of_tetros, int width)
+int		**ft_tetroinit(int **t, int nb_of_tetros, int width)
 {
 	int		i;
 	int		id;
@@ -37,7 +37,7 @@ int		**ft_tetrotogrid(int **t, int nb_of_tetros, int width)
 		if (width > 4) 
 			while (i < 4)
 			{
-				t[id][i] = t[id][i] + (t[id][i] / (width - 1));
+				t[id][i] = t[id][i] + ((t[id][i] / 5) * (width - 4));
 				i++;
 			}
 		id++;

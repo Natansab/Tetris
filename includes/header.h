@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 20:13:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/21 18:39:54 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 08:34:25 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char *ft_makegrid(int);
 int		ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros);
 int		**ft_tetrotoarray(char *str);
 int		**ft_tetrotogrid(int **t, int nb_of_tetros, int grid);
+int		**ft_tetroinit(int **t, int nb_of_tetros, int width);
 
 #endif

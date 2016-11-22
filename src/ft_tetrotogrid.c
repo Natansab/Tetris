@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 10:08:53 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 09:42:46 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 12:44:20 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ int		**ft_tetrotogrid(int **t, int nb_of_tetros, int width)
 	while (id < nb_of_tetros)
 	{
 		i = 0;
-		if (width > 4) 
-			while (i < 4)
-			{
-				t[id][i] = t[id][i] + (t[id][i] / (width - 1));
-				i++;
-			}
+		while (i < 4)
+		{
+			t[id][i] = t[id][i] + (t[id][i] / (width - 1));
+			i++;
+		}
 		id++;
 	}
 	return (t);

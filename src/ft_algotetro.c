@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/22 08:52:03 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 11:54:06 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 	{
 		//printf(" value in the grid %c\n", grid[tetro[i][k] + position]);
 		//printf(" i = %i, k = %i, position = %i\n", i, k, position);
-		if (grid[tetro[i][k] + position] != '.')
+		if (grid[tetro[i][k] + position] != '.' || tetro[i][k] + position > ft_strlen(grid))
 			return (0);
 		k++;
 	}

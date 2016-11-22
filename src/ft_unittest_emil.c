@@ -6,11 +6,12 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:51:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 08:35:30 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 10:42:29 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 int			main(int argc, char **argv)
@@ -21,6 +22,11 @@ int			main(int argc, char **argv)
 	int		square;
 
 	str = ft_filetostr(argv[1]);
+	if (ft_checkfile(str) == 0)
+	{
+		ft_putstr("error");
+		return (0);
+	}
 	square = ft_minsquare(str);
 	nb_of_tetros = (strlen(str) + 1) / 21;
 	ft_algotetro(ft_tetroinit(ft_tetrotoarray(str), nb_of_tetros, square), 0, ft_makegrid(ft_minsquare(str)), (nb_of_tetros));

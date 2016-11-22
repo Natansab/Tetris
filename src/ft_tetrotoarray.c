@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 10:39:21 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/21 16:48:00 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 12:42:22 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include "../libft/libft.h"
 
-int *ft_tetrotocoord(int *tetro, char *str)
+int		*ft_tetrotocoord(int *tetro, char *str)
 {
 	int i;
 	int j;
@@ -30,11 +30,10 @@ int *ft_tetrotocoord(int *tetro, char *str)
 		}
 		i++;
 	}
-return (tetro);
+	return (tetro);
 }
 
-// Move the tetro to the up
-char *ft_cutrow(char *str)
+char	*ft_cutrow(char *str)
 {
 	int i;
 	int j;
@@ -55,16 +54,15 @@ char *ft_cutrow(char *str)
 		}
 		k = 15;
 		while (k < 19)
-			{
-				str[k] = '.';
-				k++;
-			}
+		{
+			str[k] = '.';
+			k++;
+		}
 	}
-return (str);
+	return (str);
 }
 
-// Move the tetro to the left
-char *ft_cutcol(char *str)
+char	*ft_cutcol(char *str)
 {
 	int i;
 	int j;
@@ -85,34 +83,30 @@ char *ft_cutcol(char *str)
 		}
 		k = 3;
 		while (k < 19)
-			{
-				str[k] = '.';
-				k = k + 5;
-			}
+		{
+			str[k] = '.';
+			k = k + 5;
+		}
 	}
-return (str);
+	return (str);
 }
 
-int **ft_tetrotoarray(char *str)
+int		**ft_tetrotoarray(char *str)
 {
 	int nb_of_tetros;
 	int **tetro;
 	int i;
 
-// Define the nb of tetros
 	nb_of_tetros = (strlen(str) + 1) / 21;
-
-// Allocate the number of tetros with malloc
 	if (!(tetro = (int**)malloc(sizeof(*tetro) * nb_of_tetros)))
 		return (NULL);
-// Allocate for each tetro, 4 int
 	i = 0;
 	while (i < nb_of_tetros)
 	{
 		if (!(tetro[i] = (int*)malloc(sizeof(tetro) * 4)))
 			return (NULL);
-		// Do not forget to change strndup to ft_strndup, check if needs to free the memory of ft_strndup
-		tetro[i] = ft_tetrotocoord(tetro[i], ft_cutcol(ft_cutrow(strndup(str + i * 21, 20))));
+		tetro[i] = ft_tetrotocoord(tetro[i],
+				ft_cutcol(ft_cutrow(strndup(str + i * 21, 20))));
 		i++;
 	}
 	return (tetro);

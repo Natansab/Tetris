@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 10:39:21 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/22 12:42:22 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/22 18:57:42 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int		**ft_tetrotoarray(char *str)
 	int **tetro;
 	int i;
 
-	nb_of_tetros = (strlen(str) + 1) / 21;
+	nb_of_tetros = (ft_strlen(str) + 1) / 21;
 	if (!(tetro = (int**)malloc(sizeof(*tetro) * nb_of_tetros)))
 		return (NULL);
 	i = 0;
@@ -106,7 +106,7 @@ int		**ft_tetrotoarray(char *str)
 		if (!(tetro[i] = (int*)malloc(sizeof(tetro) * 4)))
 			return (NULL);
 		tetro[i] = ft_tetrotocoord(tetro[i],
-				ft_cutcol(ft_cutrow(strndup(str + i * 21, 20))));
+				ft_cutcol(ft_cutrow(ft_strndup(str + i * 21, 20))));
 		i++;
 	}
 	return (tetro);

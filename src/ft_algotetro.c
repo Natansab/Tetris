@@ -6,12 +6,11 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/22 18:02:57 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/22 18:53:52 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
 #include <unistd.h>
 #include "../includes/header.h"
 #include "../libft/libft.h"
@@ -74,11 +73,11 @@ int		ft_algotetro(int **tetro, int i, char *grid, int tetnb)
 
 	if (i > tetnb - 1)
 	{
-		puts(grid);
+		ft_putstr(grid);
 		return (1);
 	}
 	position = -1;
-	while (++position < strlen(grid))
+	while (++position < (unsigned long)ft_strlen(grid))
 	{
 		print = 0;
 		if (ft_tetrofits(tetro, grid, position, i))

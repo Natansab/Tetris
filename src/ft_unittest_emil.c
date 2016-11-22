@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:51:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 18:50:32 by nsabbah          ###   ########.fr       */
+/*   Updated: 2016/11/22 18:59:02 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 		return (0);
 	i = -1;
 	str = ft_filetostr(argv[1]);
-	nb_of_tetros = (strlen(str) + 1) / 21;
+	nb_of_tetros = (ft_strlen(str) + 1) / 21;
 	square = ft_minsquare(nb_of_tetros);
 	tetro = ft_tetrotoarray(str);
 	if (nb_of_tetros == 1 && (tetro[0][0] != 0 || tetro[0][1] != 1

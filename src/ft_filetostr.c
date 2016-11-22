@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:08:09 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/18 11:00:23 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 15:55:30 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 #include "../libft/libft.h"
 #define BUF_SIZE 441
 
-/* BUF_SIZE is equal to 26 blocks without the last new line. 26 * (16 + \n) - 1
-= 441  */
-
-char		*ft_filetostr(char *file)
+char	*ft_filetostr(char *file)
 {
 	int		ret;
 	int		fd;
@@ -34,24 +31,18 @@ char		*ft_filetostr(char *file)
 	}
 	if (!(buffer = (char*)malloc(sizeof(*buffer) * (BUF_SIZE + 1))))
 		return (NULL);
-	/* read returns the characters read to ret, i.e the file size. It returns
-	 * the string into buffer. If the file is too large(> 441) it will loop once and 
-	 * reach an error msg. Ret == 0, if there is an error. */
 	while ((ret = read(fd, buffer, BUF_SIZE)) != 0)
 	{
 		buffer[ret] = '\0';
 		if (maxfile++ == 0)
 			output = ft_strdup(buffer);
-		else 
+		else
 		{
 			ft_errormsg(2);
 			return (NULL);
 		}
 	}
-//	output[ret] = '\0';
 	close(fd);
 	free(buffer);
 	return (output);
 }
-/* ft_strdup creates a new string with the size of the file since the buffer
- * is '\0'. The output pointer points to fresh copied string. */

@@ -6,19 +6,15 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/22 14:42:54 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 15:58:59 by nsabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 #include "../includes/header.h"
 #include "../libft/libft.h"
-
-/* This function will print the AAAA or BBBB if we need to fit the tetro in
-   the grid. If we need to erase the AAAA, erase = 1*/
 
 char	*ft_printtetro(int **tetro, char *grid, int position, int i, int erase)
 {
@@ -36,12 +32,7 @@ char	*ft_printtetro(int **tetro, char *grid, int position, int i, int erase)
 	return (grid);
 }
 
-/* ft_tetrofits is a function to determine if the tetro will fit in this
-   position or if we should change position
-   tab = tetro[index]
-   */
-
-int ft_tetrofits(int **tetro, char *grid, int position, int i)
+int		ft_tetrofits(int **tetro, char *grid, int position, int i)
 {
 	int k;
 
@@ -52,16 +43,14 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 			return (0);
 		k++;
 	}
-
 	return (1);
 }
 
-int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
+int		ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 {
-	unsigned long  position;
-	int print;
-	int grid_size;
-
+	unsigned long	position;
+	int				print;
+	int				grid_size;
 
 	grid_size = 0;
 	while (grid[grid_size] == '.')
@@ -89,7 +78,8 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 	if (i == 0)
 	{
 		tetro = ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1);
-		return (ft_algotetro(tetro, 0, ft_makegrid(grid_size + 1), nb_of_tetros));
+		return (ft_algotetro(tetro, 0,
+					ft_makegrid(grid_size + 1), nb_of_tetros));
 	}
 	return (0);
 }

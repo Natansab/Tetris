@@ -6,7 +6,7 @@
 /*   By: nsabbah <nsabbah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:48:38 by nsabbah           #+#    #+#             */
-/*   Updated: 2016/11/22 14:27:04 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 14:42:54 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,12 @@ int ft_tetrofits(int **tetro, char *grid, int position, int i)
 	int k;
 
 	k = 0;
-//	ft_putstr(grid);
-//	ft_putchar('\n');
 	while (k < 4)
 	{
-		//printf(" value in the grid %c\n", grid[tetro[i][k] + position]);
-		//printf(" i = %i, k = %i, position = %i\n", i, k, position);
 		if (grid[tetro[i][k] + position] != '.' || tetro[i][k] + position > ft_strlen(grid))
 			return (0);
 		k++;
 	}
-	//printf("does it fit ?\n");
-	//printf("position is %i\n", position);
 
 	return (1);
 }
@@ -68,7 +62,6 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 	int print;
 	int grid_size;
 
-//	printf("the number of tetros: %d \n", nb_of_tetros);
 
 	grid_size = 0;
 	while (grid[grid_size] == '.')
@@ -81,27 +74,20 @@ int ft_algotetro(int **tetro, int i, char *grid, int nb_of_tetros)
 	position = 0;
 	while (position < strlen(grid))
 	{
-		printf("strlen(grid) = %lu\n\n", strlen(grid));
-		printf("%s\n\n", grid);
 		print = 0;
 		if (ft_tetrofits(tetro, grid, position, i))
 		{
-			//ft_putstr("ok\n\n");
 			print = 1;
 			grid = ft_printtetro(tetro, grid, position, i, 0);
-			//puts(grid);
-			//puts("\n\n");
 			if (ft_algotetro(tetro, i + 1, grid, nb_of_tetros))
 				return (1);
 		}
 		if (print)
 			grid = ft_printtetro(tetro, grid, position, i, 1);
 		position++;
-		//printf("This is i: %d, and position: %d \n", i, (int)position);
 	}
 	if (i == 0)
 	{
-		//printf("Cats are cool!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		tetro = ft_tetrotogrid(tetro, nb_of_tetros, grid_size + 1);
 		return (ft_algotetro(tetro, 0, ft_makegrid(grid_size + 1), nb_of_tetros));
 	}

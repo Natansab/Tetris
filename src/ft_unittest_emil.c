@@ -6,7 +6,7 @@
 /*   By: ewallner <ewallner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 10:51:07 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 12:32:16 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 14:43:08 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ int			main(int argc, char **argv)
 			}
 	i++;
 	}
-	ft_algotetro(ft_tetroinit(ft_tetrotoarray(str), nb_of_tetros, square), 0, ft_makegrid(square), (nb_of_tetros));
+	ft_algotetro(ft_tetroinit(tetro, nb_of_tetros, square), 0, ft_makegrid(square), (nb_of_tetros));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ewallner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 08:29:22 by ewallner          #+#    #+#             */
-/*   Updated: 2016/11/22 08:35:33 by ewallner         ###   ########.fr       */
+/*   Updated: 2016/11/22 09:18:15 by ewallner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,6 @@ int		**ft_tetroinit(int **t, int nb_of_tetros, int width)
 	while (id < nb_of_tetros)
 	{
 		i = 0;
-	/*	if (width == 2) 
-			while (i < 4)
-			{
-				t[id][i] = t[id][i] - ((t[id][i] / 5) * 2);
-				i++;
-			}
-		else if (width == 3)
-			while (i < 4)
-			{
-				t[id][i] = t[id][i] - ((t[id][i] / 5) * 1);
-				i++;
-			}*/		
 		if (width > 4) 
 			while (i < 4)
 			{

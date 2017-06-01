@@ -66,7 +66,7 @@ HHGGIII
 How to use:
 
     git clone https://github.com/Natansab/Tetris.git
-    make 
+    make
     ./fillit examples/ok_09_block
 
 
@@ -74,4 +74,4 @@ Official Team
 --------
 This project was developed jointly by Natan Sabbah [@Natansab](https://github.com/Natansab) and Emil Wallner [@emilwallner](https://github.com/emilwallner).
 
-[PDF]: https://github.com/giacomoguiulfo/fillit/blob/master/fillit.en.pdf
+[PDF]: https://github.com/Natansab/Tetris/blob/master/fillit.fr.pdf

@@ -66,7 +66,7 @@ HHGGIII
 How to use:
 
     git clone https://github.com/Natansab/Tetris.git
-    choose a map from examples folder
+    make 
     ./fillit examples/ok_09_block
 
 
